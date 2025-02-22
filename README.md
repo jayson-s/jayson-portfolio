@@ -13,8 +13,6 @@ This is my personal portfolio website built with **Next.js 15**, **React 19**, *
 - 🎨 **Framer Motion Animations** – Smooth UI animations for a delightful user experience.
 - 🌙 **Dark Mode Support** – Automatic dark/light mode based on system settings.
 
----
-
 ## 📂 Project Structure
 
 ```bash
