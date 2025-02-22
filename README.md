@@ -17,6 +17,7 @@ This is my personal portfolio website built with **Next.js 15**, **React 19**, *
 
 ## 📂 Project Structure
 
+```bash
 📦 jayson-portfolio
 ├── 📁 app             # Next.js App Router files
 ├── 📁 components      # Reusable UI components
@@ -25,3 +26,4 @@ This is my personal portfolio website built with **Next.js 15**, **React 19**, *
 ├── 📄 next.config.js  # Next.js configuration
 ├── 📄 tailwind.config.ts  # Tailwind configuration
 └── 📄 README.md       # This file
+```
