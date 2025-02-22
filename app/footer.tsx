@@ -1,5 +1,5 @@
 'use client'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+//import { AnimatedBackground } from '@/components/ui/animated-background'
 import { TextLoop } from '@/components/ui/text-loop'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
@@ -36,35 +36,27 @@ function ThemeSwitch() {
   }
 
   return (
-    <AnimatedBackground
-      className="rounded-lg bg-zinc-100 dark:bg-zinc-800"
-      defaultValue={theme}
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.2,
-      }}
-      enableHover={false}
-      onValueChange={(id) => setTheme(id as string)}
-    >
+    <div className="rounded-lg bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-white/20 dark:border-zinc-800 p-1 flex space-x-1 shadow-md">
       {THEMES_OPTIONS.map((themeOption) => {
         const isActive = themeOption.id === theme
 
         return (
           <button
             key={themeOption.id}
-            className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 dark:text-zinc-400"
+            className={`inline-flex h-7 w-7 items-center justify-center rounded-md transition-colors duration-200 focus-visible:outline-2 ${
+              isActive
+                ? 'bg-zinc-200 dark:bg-zinc-700 text-black dark:text-white'
+                : 'text-zinc-500 dark:text-zinc-400'
+            }`}
             type="button"
             aria-label={`Switch to ${themeOption.label} theme`}
-            data-id={themeOption.id}
-            data-checked={isActive} // ✅ Ensures correct styles
             onClick={() => setTheme(themeOption.id)}
           >
             {themeOption.icon}
           </button>
         )
       })}
-    </AnimatedBackground>
+    </div>
   )
 }
 

@@ -13,6 +13,13 @@ type WorkExperience = {
   id: string
 }
 
+type Education = {
+  institution: string
+  degree: string
+  grad: string
+  id: string
+}
+
 type SocialLink = {
   label: string
   link: string
@@ -73,6 +80,15 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: '2017',
     end: '2021',
     id: 'work4',
+  },
+]
+
+export const EDUCATION_: Education[] = [
+  {
+    institution: 'University of Ontario Institute of Technology',
+    degree: 'Bachelor of Science (Honours) - Computer Science',
+    grad: '2024',
+    id: 'edu1',
   },
 ]
 

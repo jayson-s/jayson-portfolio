@@ -1,20 +1,12 @@
 'use client'
-import { motion } from 'motion/react'
-import { XIcon } from 'lucide-react'
+import { motion } from "framer-motion";
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogClose,
-  MorphingDialogContainer,
-} from '@/components/ui/morphing-dialog'
-import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+
 import {
   PROJECTS,
   WORK_EXPERIENCE,
+  EDUCATION_,
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
@@ -75,19 +67,22 @@ function MagneticSocialLink({
 export default function Personal() {
   return (
     <motion.main
-      className="space-y-24"
+      className="space-y-15"
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
-    >
+    > 
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Focused on creating intuitive and performant web experiences.
-            Bridging the gap between design and development.
+          <p className="text-zinc-900 dark:text-zinc-400">
+          Hello, I’m a dedicated software engineer with 5+ years of experience in crafting innovative, user-focused solutions. 
+          Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—with industry leaders like Apple and IBM. 
+          <br/><br/>
+          Beyond tech, I mentor junior cricket athletes, drawing on 18 years of playing and coaching to promote teamwork and discipline. 
+          Passionate about technology’s transformative power, I stay on the cutting edge of AI trends to drive meaningful change both professionally and in my community.
           </p>
         </div>
       </motion.section>
@@ -96,7 +91,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
@@ -151,6 +146,41 @@ export default function Personal() {
                 </div>
               </div>
             </a>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Education</h3>
+        <div className="flex flex-col space-y-2">
+          {EDUCATION_.map((edu) => (
+            <div
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              key={edu.id}
+            >
+              <Spotlight
+                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {edu.degree}
+                    </h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                      {edu.institution}
+                    </p>
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-400">
+                    Class of {edu.grad}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </motion.section>

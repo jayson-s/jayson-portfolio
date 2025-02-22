@@ -1,90 +1,44 @@
 'use client'
-import { cn } from '@/lib/utils'
-import { AnimatePresence, Transition, motion } from 'motion/react'
-import {
-  Children,
-  cloneElement,
-  ReactElement,
-  useEffect,
-  useState,
-  useId,
-} from 'react'
+import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
+import { useEffect, useState, ReactNode } from 'react'
 
-export type AnimatedBackgroundProps = {
-  children:
-    | ReactElement<{ 'data-id': string }>[]
-    | ReactElement<{ 'data-id': string }>
-  defaultValue?: string
-  onValueChange?: (newActiveId: string | null) => void
-  className?: string
-  transition?: Transition
-  enableHover?: boolean
-}
-
-export function AnimatedBackground({
-  children,
-  defaultValue,
-  onValueChange,
-  className,
-  transition,
-  enableHover = false,
-}: AnimatedBackgroundProps) {
-  const [activeId, setActiveId] = useState<string | null>(null)
-  const uniqueId = useId()
-
-  const handleSetActiveId = (id: string | null) => {
-    setActiveId(id)
-
-    if (onValueChange) {
-      onValueChange(id)
-    }
-  }
+export function AnimatedBackground({ children }: { children: ReactNode }) {
+  const { theme, systemTheme } = useTheme()
+  const [currentTheme, setCurrentTheme] = useState(theme)
 
   useEffect(() => {
-    if (defaultValue !== undefined) {
-      setActiveId(defaultValue)
-    }
-  }, [defaultValue])
+    const resolvedTheme = theme === 'system' ? systemTheme : theme
+    setCurrentTheme(resolvedTheme)
+  }, [theme, systemTheme])
 
-  return Children.map(children, (child: any, index) => {
-    const id = child.props['data-id']
+  return (
+    <div className="relative w-full h-full overflow-hidden">
+      {/* Gradient Background */}
+      <motion.div
+        className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none"
+        animate={{
+          backgroundPosition: ['0% 0%', '100% 100%', '0% 0%'],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: 'mirror',
+          ease: 'easeInOut',
+        }}
+        style={{
+          background: currentTheme === 'dark'
+            ? 'linear-gradient(135deg, #111827, #1F2937, #374151)'
+            : 'linear-gradient(135deg, #a8c0ff, #8ec5fc, #ffffff)',
+          backgroundSize: '300% 300%',
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+        }}
+      />
 
-    const interactionProps = enableHover
-      ? {
-          onMouseEnter: () => handleSetActiveId(id),
-          onMouseLeave: () => handleSetActiveId(null),
-        }
-      : {
-          onClick: () => handleSetActiveId(id),
-        }
-
-    return cloneElement(
-      child,
-      {
-        key: index,
-        className: cn('relative inline-flex', child.props.className),
-        'data-checked': activeId === id ? 'true' : 'false',
-        ...interactionProps,
-      },
-      <>
-        <AnimatePresence initial={false}>
-          {activeId === id && (
-            <motion.div
-              layoutId={`background-${uniqueId}`}
-              className={cn('absolute inset-0', className)}
-              transition={transition}
-              initial={{ opacity: defaultValue ? 1 : 0 }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-              }}
-            />
-          )}
-        </AnimatePresence>
-        <div className="z-10">{child.props.children}</div>
-      </>,
-    )
-  })
+      {/* Page Content */}
+      {children}
+    </div>
+  )
 }
