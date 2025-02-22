@@ -21,15 +21,27 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'Personal Portfolio',
-    description: 'My personal website built with Next.js and Tailwind CSS.',
+    description: 'My legacy personal website built with HTML5, CSS and JavaScript.',
     link: 'https://jayson-s.github.io/',
     id: 'project1',
   },
   {
-    name: 'Othello AI Game',
+    name: 'Othello',
     description: 'An AI-powered Othello game using Java and Minimax Algorithm.',
     link: 'https://github.com/jayson-s/othello-ai',
     id: 'project2',
+  },
+  {
+    name: 'Banking System',
+    description: 'A C++ banking system for account management and transactions, ensuring data integrity and scalability.',
+    link: 'https://github.com/jayson-s/Banking-System',
+    id: 'project3',
+  },
+  {
+    name: 'LifeBalance+',
+    description: 'A cross-platform wellness and productivity app built with Flutter, featuring task management, habit tracking, and workout analytics for a balanced lifestyle.',
+    link: 'https://github.com/jayson-s/LifeBalancePlus',
+    id: 'project4',
   },
 ]
 
@@ -42,18 +54,25 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
+    company: 'IBM',
+    title: 'Software Developer',
+    start: 'May 2019',
+    end: 'Dec 2019',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
+    company: 'Shoppers Drug Mart',
+    title: 'Assistant Store Manager',
     start: '2017',
-    end: 'Present',
+    end: '2022',
     id: 'work3',
+  },
+  {
+    company: 'Canada Post',
+    title: 'Administrative Manager',
+    start: '2017',
+    end: '2021',
+    id: 'work4',
   },
 ]
 
@@ -68,4 +87,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
 ]
 
-export const EMAIL = 'jayson.sandhu@yahoo.com'
+type Email = `${string}@${string}.${string}`;
+
+export const EMAIL: Email = 'jayson.sandhu@yahoo.com';

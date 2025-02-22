@@ -1,7 +1,17 @@
-"use client";
-
-import { motion } from "framer-motion";
+'use client'
+import { motion } from 'motion/react'
+import { XIcon } from 'lucide-react'
+import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
+import {
+  MorphingDialog,
+  MorphingDialogTrigger,
+  MorphingDialogContent,
+  MorphingDialogClose,
+  MorphingDialogContainer,
+} from '@/components/ui/morphing-dialog'
+import Link from 'next/link'
+import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
   PROJECTS,
   WORK_EXPERIENCE,
@@ -115,26 +125,36 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
         <div className="flex flex-col space-y-2">
           {WORK_EXPERIENCE.map((job) => (
-            <div
+            <a
+              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+              target="_blank"
+              rel="noopener noreferrer"
               key={job.id}
-              className="group relative overflow-hidden rounded-2xl border border-zinc-300 bg-white p-5 shadow-sm transition-all duration-300 dark:border-zinc-700 dark:bg-zinc-900 dark:shadow-lg hover:shadow-md dark:hover:shadow-xl"
             >
-              <div className="relative flex flex-col md:flex-row justify-between items-start md:items-center">
-                <div>
-                  <h4 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100 transition-all duration-300 group-hover:text-zinc-900 dark:group-hover:text-zinc-300">
-                    {job.title}
-                  </h4>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">{job.company}</p>
+              <Spotlight
+                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                size={64}
+              />
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                <div className="relative flex w-full flex-row justify-between">
+                  <div>
+                    <h4 className="font-normal dark:text-zinc-100">
+                      {job.title}
+                    </h4>
+                    <p className="text-zinc-500 dark:text-zinc-400">
+                      {job.company}
+                    </p>
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-400">
+                    {job.start} - {job.end}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400 md:mt-0">
-                  {job.start} - {job.end}
-                </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </motion.section>
-      
+
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
