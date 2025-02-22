@@ -1,5 +1,5 @@
 'use client'
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 
@@ -77,7 +77,7 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
-          <p className="text-zinc-900 dark:text-zinc-400">
+          <p className="text-zinc-600 dark:text-zinc-400">
           Hello, I’m a dedicated software engineer with 5+ years of experience in crafting innovative, user-focused solutions. 
           Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—with industry leaders like Apple and IBM. 
           <br/><br/>
@@ -130,7 +130,7 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-900">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
@@ -165,7 +165,7 @@ export default function Personal() {
                 className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                 size={64}
               />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-900">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>
                     <h4 className="font-normal dark:text-zinc-100">
