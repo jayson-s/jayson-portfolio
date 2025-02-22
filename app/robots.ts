@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { WEBSITE_URL } from '@/lib/constants'
+
+const WEBSITE_URL = "https://yourdomain.com"; // placeholder url
 
 export default function robots(): MetadataRoute.Robots {
   return {
