@@ -71,18 +71,18 @@ export default function Personal() {
       variants={VARIANTS_CONTAINER}
       initial="hidden"
       animate="visible"
-    > 
+    >
       <motion.section
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-          Hello, I’m a dedicated software engineer with 5+ years of experience in crafting innovative, user-focused solutions. 
-          Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—with industry leaders like Apple and IBM. 
-          <br/><br/>
-          Beyond tech, I mentor junior cricket athletes, drawing on 18 years of playing and coaching to promote teamwork and discipline. 
-          Passionate about technology’s transformative power, I stay on the cutting edge of AI trends to drive meaningful change both professionally and in my community.
+            Hello, I’m a dedicated software engineer with 5+ years of experience in crafting innovative, user-focused solutions.
+            Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—with industry leaders like Apple and IBM.
+            <br /><br />
+            Beyond tech, I mentor junior cricket athletes, drawing on 18 years of playing and coaching to promote teamwork and discipline.
+            Passionate about technology’s transformative power, I stay on the cutting edge of AI trends to drive meaningful change both professionally and in my community.
           </p>
         </div>
       </motion.section>
@@ -102,7 +102,7 @@ export default function Personal() {
                   target="_blank"
                 >
                   {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"></span>
+                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
                 </a>
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                   {project.description}

@@ -28,25 +28,25 @@ type SocialLink = {
 export const PROJECTS: Project[] = [
   {
     name: 'Personal Portfolio',
-    description: 'My legacy personal website built with HTML5, CSS and JavaScript.',
+    description: 'My legacy personal website built with HTML, CSS, & JavaScript before shifting to a modern Next.js based version.',
     link: 'https://jayson-s.github.io/',
     id: 'project1',
   },
   {
     name: 'Othello',
-    description: 'An AI-powered Othello game using Java and Minimax Algorithm.',
-    link: 'https://github.com/jayson-s/othello-ai',
+    description: 'An AI-powered Othello game built with Java and Minimax Algorithm, designed for competitive strategic gameplay.',
+    link: 'https://github.com/jayson-s/othello',
     id: 'project2',
   },
   {
     name: 'Banking System',
-    description: 'A C++ banking system for account management and transactions, ensuring data integrity and scalability.',
+    description: 'A scalable C++ banking system designed for secure account management, transactions, and financial data integrity.',
     link: 'https://github.com/jayson-s/Banking-System',
     id: 'project3',
   },
   {
     name: 'LifeBalance+',
-    description: 'A cross-platform wellness and productivity app built with Flutter, featuring task management, habit tracking, and workout analytics for a balanced lifestyle.',
+    description: 'A cross-platform wellness app built with Flutter, offering task management, habit tracking, and fitness analytics.',
     link: 'https://github.com/jayson-s/LifeBalancePlus',
     id: 'project4',
   },
