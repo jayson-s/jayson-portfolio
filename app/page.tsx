@@ -4,6 +4,7 @@ import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 
 import {
+  SKILLS,
   PROJECTS,
   WORK_EXPERIENCE,
   EDUCATION_,
@@ -85,6 +86,32 @@ export default function Personal() {
             Passionate about technology’s transformative power, I stay on the cutting edge of AI trends to drive meaningful change both professionally and in my community.
           </p>
         </div>
+      </motion.section>
+
+      <motion.section
+        variants={VARIANTS_SECTION}
+        transition={TRANSITION_SECTION}
+      >
+        <h3 className="mb-5 text-lg font-medium">Skills</h3>
+        <div className="border-t border-zinc-300 dark:border-zinc-700 mb-6"></div>
+        
+        {SKILLS.map((skillCategory) => (
+          <div key={skillCategory.category} className="mb-6">
+            <h3 className="text-lg font-semibold uppercase text-gray-700 dark:text-gray-300">
+              {skillCategory.category}
+            </h3>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {skillCategory.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 text-sm font-medium text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-800 dark:text-gray-100"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </motion.section>
 
       <motion.section

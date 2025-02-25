@@ -25,6 +25,52 @@ type SocialLink = {
   link: string
 }
 
+type SkillCategory = {
+  category: string
+  skills: string[]
+}
+
+export const SKILLS: SkillCategory[] = [
+  {
+    category: 'Languages',
+    skills: ['Java', 'C++', 'Python', 'JavaScript', 'HTML', 'CSS', 'Swift']
+  },
+  {
+    category: 'General',
+    skills: [
+      'Adaptability',
+      'Analytical',
+      'Collaboration',
+      'Communication',
+      'Critical Thinking',
+      'Innovation',
+      'Leadership',
+      'Problem Solving',
+      'Teamwork',
+      'Time Management',
+    ],
+  },
+  {
+    category: 'Technical',
+    skills: [
+      'Algorithms',
+      'Artificial Intelligence',
+      'Cloud Computing',
+      'Data Structures',
+      'Debugging',
+      'Flutter',
+      'Git',
+      'Machine Learning',
+      'Mobile Development',
+      'Software Development',
+      'Technical Support',
+      'Troubleshooting',
+      'Version Control',
+      'Web Development',
+    ],
+  },
+]
+
 export const PROJECTS: Project[] = [
   {
     name: 'Personal Portfolio',
