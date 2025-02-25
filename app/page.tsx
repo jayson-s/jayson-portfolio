@@ -79,11 +79,11 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Hello, I’m a dedicated software engineer with 5+ years of experience in crafting innovative, user-focused solutions.
-            Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—with industry leaders like Apple and IBM.
+            Hello, I’m a software engineer with 5+ years of experience crafting innovative, user-focused solutions.
+            Skilled in Java, Python, and C++, I’ve tackled complex challenges—from AI-powered drone systems to scalable cloud-native applications—working with industry leaders like Apple and IBM to build efficient, high-performance software.
             <br /><br />
-            Beyond tech, I mentor junior cricket athletes, drawing on 18 years of playing and coaching to promote teamwork and discipline.
-            Passionate about technology’s transformative power, I stay on the cutting edge of AI trends to drive meaningful change both professionally and in my community.
+            Beyond tech, I mentor junior cricket athletes, drawing on 18 years of playing and coaching to foster teamwork, strategy, and discipline.
+            Passionate about technology’s transformative power, I stay at the forefront of AI and software innovation, building solutions that make an impact.
           </p>
         </div>
       </motion.section>
@@ -93,18 +93,16 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <h3 className="mb-5 text-lg font-medium">Skills</h3>
-        <div className="border-t border-zinc-300 dark:border-zinc-700 mb-6"></div>
-        
         {SKILLS.map((skillCategory) => (
           <div key={skillCategory.category} className="mb-6">
-            <h3 className="text-lg font-semibold uppercase text-gray-700 dark:text-gray-300">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
               {skillCategory.category}
             </h3>
             <div className="mt-2 flex flex-wrap gap-2">
               {skillCategory.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 text-sm font-medium text-gray-900 bg-gray-200 rounded-lg dark:bg-gray-800 dark:text-gray-100"
+                  className="px-4.5 py-2 text-sm font-medium bg-zinc-100 text-zinc-800 rounded-lg dark:bg-zinc-800 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-700 transition-all duration-200 hover:bg-zinc-200 dark:hover:bg-zinc-700"
                 >
                   {skill}
                 </span>
